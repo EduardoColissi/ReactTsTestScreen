@@ -26,7 +26,9 @@ function App() {
       <h1>{pokemon.name}</h1>
 
       <Button type="primary" onClick={() => {
-        setPokeIndex(pokeIndex - 1);
+        if(pokeIndex > 1) {
+          setPokeIndex(pokeIndex - 1);
+        }
       }}>Anterior</Button>
       <Button type="primary" onClick={() => setPokeIndex(pokeIndex + 1)}>Próximo</Button>
     </div>
