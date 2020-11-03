@@ -23,9 +23,9 @@ function App() {
   }, [pokeIndex]);
 
   return (
-    <div className="App">
+    <div className="Main">
       <h1>{pokemon.name}</h1>
-      <Image width={200} src= {pokemon?.sprites?.front_default}/>
+      <Image width={500} src= {pokemon?.sprites?.front_default}/>
       <Button type="primary" onClick={() => {
         if(pokeIndex > 1) {
           setPokeIndex(pokeIndex - 1);
