@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'antd';
+import { Button, Image } from 'antd';
 import 'antd/dist/antd.css';
 import api from '../services/api';
 
 interface IPokemon {
+  sprites: any;
   name: string
 }
 
 function App() {
-  const [pokemon, setPokemon] = useState<IPokemon>({name: ''});
+  const [pokemon, setPokemon] = useState<IPokemon>({name: '', sprites:''});
   const [pokeIndex, setPokeIndex] = useState<number>(1);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <h1>{pokemon.name}</h1>
-
+      <Image width={200} src= {pokemon?.sprites?.front_default}/>
       <Button type="primary" onClick={() => {
         if(pokeIndex > 1) {
           setPokeIndex(pokeIndex - 1);
