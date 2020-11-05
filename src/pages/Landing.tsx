@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image } from 'antd';
 import 'antd/dist/antd.css';
 import api from '../services/api';
+import '../styles/Landing.css';
+ 
 
 interface IPokemon {
   sprites: any;
-  name: string
+  name: string;
 }
 
 function App() {
@@ -23,6 +25,10 @@ function App() {
   }, [pokeIndex]);
 
   return (
+    <>
+    <header>
+      <Image width={500} src= '../Images/Logo1.png' />
+    </header>
     <div className="Main">
       <h1>{pokemon.name}</h1>
       <Image width={500} src= {pokemon?.sprites?.front_default}/>
@@ -33,6 +39,7 @@ function App() {
       }}>Anterior</Button>
       <Button type="primary" onClick={() => setPokeIndex(pokeIndex + 1)}>Próximo</Button>
     </div>
+    </>
   );
 }
 
