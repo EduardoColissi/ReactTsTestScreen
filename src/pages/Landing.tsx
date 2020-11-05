@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Image } from 'antd';
+import { Button, Image, Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
 import api from '../services/api';
 import '../styles/Landing.css';
+
  
 
 interface IPokemon {
@@ -27,7 +28,9 @@ function App() {
   return (
     <>
     <header>
-      <Image width={500} src= '../Images/Logo1.png' />
+      <Row justify='center' align='middle'>
+      <Image width={400} src= '../Images/Logo2.png' />
+      </Row>
     </header>
     <div className="Main">
       <h1>{pokemon.name}</h1>
